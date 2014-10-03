@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Zhe Wang</title><link href="/" rel="alternate"></link><link href="/feeds%5Czhe-wang.atom.xml" rel="self"></link><id>/</id><updated>2014-10-02T00:00:00+02:00</updated><entry><title>My First Page</title><link href="/my-first-page.html" rel="alternate"></link><updated>2014-10-02T00:00:00+02:00</updated><author><name>Zhe Wang</name></author><id>tag:,2014-10-02:my-first-page.html</id><summary type="html">&lt;p&gt;Hello World!&lt;/p&gt;
-&lt;p&gt;A few changes.&lt;/p&gt;</summary></entry></feed>
+&lt;p&gt;More work needs to be done:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;currently, the page has to be generated, then:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$ make publish
+$ cd output
+$ &lt;/p&gt;</summary></entry></feed>
