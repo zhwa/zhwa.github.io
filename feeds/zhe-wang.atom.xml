@@ -5,8 +5,10 @@
 &lt;li&gt;&lt;a href="docs.getpelican.com"&gt;Pelican&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://help.github.com/articles/markdown-basics/"&gt;Markdown&lt;/a&gt;    &lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr /&gt;
 &lt;h2&gt;Why Pelican ?&lt;/h2&gt;
 &lt;p&gt;Well, there are certainly many other excellent choices like Jekyll. While for someone with a heavy reliance on Python, Pelican constitutes a better tool.&lt;/p&gt;
+&lt;hr /&gt;
 &lt;h2&gt;Software Setup&lt;/h2&gt;
 &lt;p&gt;Before starting, one needs to install Pelican, Markdown and one Markdown Editor. &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;
@@ -15,6 +17,7 @@
 
 
 &lt;p&gt;For MAC users, the best Markdown editor is &lt;a href="mouapp.com"&gt;Mou&lt;/a&gt;. For Windows uders, &lt;a href="markdownpad.com"&gt;MarkdownPad&lt;/a&gt; is perhaps the most siutable one.&lt;/p&gt;
+&lt;hr /&gt;
 &lt;h2&gt;Simple Steps&lt;/h2&gt;
 &lt;p&gt;To start, make one working directory for the blog, and generate the fundamental structures with Pelican Quick Start:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt;
@@ -43,4 +46,5 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;hr /&gt;
 &lt;p&gt;Open https://username.github.io in your browser, and your personal blog will be shown.&lt;/p&gt;</summary></entry></feed>
