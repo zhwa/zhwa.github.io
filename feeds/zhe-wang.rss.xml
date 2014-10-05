@@ -46,5 +46,10 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;The last step could be changed if Git has been configured properly:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt; &lt;span class="n"&gt;master&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;hr /&gt;
 &lt;p&gt;Open https://username.github.io in your browser, and your personal blog will be shown.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Zhe Wang</dc:creator><pubDate>Sat, 04 Oct 2014 00:00:00 +0200</pubDate><guid>tag:,2014-10-04:simple-steps-to-a-personal-blog.html</guid></item></channel></rss>

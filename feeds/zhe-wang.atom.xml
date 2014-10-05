@@ -46,5 +46,10 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;The last step could be changed if Git has been configured properly:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt; &lt;span class="n"&gt;master&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;hr /&gt;
 &lt;p&gt;Open https://username.github.io in your browser, and your personal blog will be shown.&lt;/p&gt;</summary></entry></feed>
