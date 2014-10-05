@@ -3,7 +3,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://pages.github.com/"&gt;Github Pages&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="docs.getpelican.com"&gt;Pelican&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://help.github.com/articles/markdown-basics/"&gt;Markdown&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://help.github.com/articles/markdown-basics/"&gt;Markdown&lt;/a&gt;    &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Why Pelican ?&lt;/h2&gt;
 &lt;p&gt;Well, there are certainly many other excellent choices like Jekyll. While for someone with a heavy reliance on Python, Pelican constitutes a better tool.&lt;/p&gt;
