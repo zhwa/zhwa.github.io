@@ -16,7 +16,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;For MAC users, the best Markdown editor is &lt;a href="mouapp.com"&gt;Mou&lt;/a&gt;. For Windows uders, &lt;a href="markdownpad.com"&gt;MarkdownPad&lt;/a&gt; is perhaps the most siutable one.&lt;/p&gt;
+&lt;p&gt;For MAC users, the best Markdown editor is &lt;a href="http://mouapp.com"&gt;Mou&lt;/a&gt;. For Windows uders, &lt;a href="http://markdownpad.com"&gt;MarkdownPad&lt;/a&gt; is perhaps the most siutable one.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2&gt;Simple Steps&lt;/h2&gt;
 &lt;p&gt;To start, make one working directory for the blog, and generate the fundamental structures with Pelican Quick Start:&lt;/p&gt;
