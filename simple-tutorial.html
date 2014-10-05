@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Zhe Wang</title>
+        <title>Simple Tutorial</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
 
         <!--[if IE]>
@@ -14,13 +14,18 @@
         <header id="banner" class="body">
                 <h1><a href="/">Zhe Wang </a></h1>
                 <nav><ul>
-                    <li><a href="/category/essay.html">Essay</a></li>
+                    <li class="active"><a href="/category/essay.html">Essay</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/simple-tutorial.html" rel="bookmark"
+           title="Permalink to Simple Tutorial">Simple Tutorial</a></h1>
+    </header>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/simple-steps-to-a-personal-blog.html">Simple steps to a personal blog</a></h1>
+    <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2014-10-04T00:00:00">
                 Published: 周六 04 十月 2014
@@ -31,32 +36,24 @@
         </address>
 <p>In <a href="/category/essay.html">Essay</a>. </p>
 
-</footer><!-- /.post-info --><p>This personal blog is constructed on the following components:</p>
+</footer><!-- /.post-info -->      <h1>Simple steps to a personal blog</h1>
+<p>This personal blog is constructed on the following components:</p>
 <ul>
 <li><a href="https://pages.github.com/">Github Pages</a></li>
 <li><a href="docs.getpelican.com">Pelican</a></li>
 <li><a href="https://help.github.com/articles/markdown-basics/">Markdown</a></li>
 </ul>
-<h3>Why Pelican ?</h3>
-<p>Well, there are certainly many other excellent choices like Jekyll. While for someone with a heavy reliance on Python, Pelican constitutes a better tool.</p>
-<h3>Software Setup</h3>
-<p>To start, one needs to install Pelican, Markdown and one Markdown Editor. </p>
-<div class="highlight"><pre><span class="n">pip</span> <span class="n">install</span> <span class="n">pelican</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">Markdown</span>
-</pre></div>
+<p>To start, one needs to set up a repository on Github</p>
+<p>$ make publish</p>
+<p>$ cd output</p>
+<p>$ git init</p>
+<p>$ git add --all</p>
+<p>$ git commit -m "the changes"</p>
+<p>$ git push https://github.com/zhwa/zhwa.github.io.git</p>
+    </div><!-- /.entry-content -->
 
-
-<p>For MAC users, the best Markdown editor is <a href="mouapp.com">Mou</a>. For Windows uders, <a href="markdownpad.com">MarkdownPad</a> is perhaps the most siutable one.</p>
-<p>a repository on Github with the name username.github.io . Clone this repository in your working directory in the computer:</p>
-<div class="highlight"><pre><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/username/username.github.io.git</span>
-</pre></div>
-
-
-<p>$ git push https://github.com/zhwa/zhwa.github.io.git</p>                </article>
-<p class="paginator">
-    Page 1 / 1
-</p>
-            </aside><!-- /#featured -->
+  </article>
+</section>
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>blogroll</h2>

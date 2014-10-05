@@ -5,9 +5,16 @@
 &lt;li&gt;&lt;a href="docs.getpelican.com"&gt;Pelican&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://help.github.com/articles/markdown-basics/"&gt;Markdown&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;Why Pelican ?&lt;/h4&gt;
-&lt;p&gt;Well, there are certainly some other excellent choices like Jekyll. While for someone with a heavy reliance on Python, Pelican constitutes a better tool.&lt;/p&gt;
-&lt;p&gt;To start, one needs to install&lt;/p&gt;
+&lt;h3&gt;Why Pelican ?&lt;/h3&gt;
+&lt;p&gt;Well, there are certainly many other excellent choices like Jekyll. While for someone with a heavy reliance on Python, Pelican constitutes a better tool.&lt;/p&gt;
+&lt;h3&gt;Software Setup&lt;/h3&gt;
+&lt;p&gt;To start, one needs to install Pelican, Markdown and one Markdown Editor. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;
+&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;Markdown&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;For MAC users, the best Markdown editor is &lt;a href="mouapp.com"&gt;Mou&lt;/a&gt;. For Windows uders, &lt;a href="markdownpad.com"&gt;MarkdownPad&lt;/a&gt; is perhaps the most siutable one.&lt;/p&gt;
 &lt;p&gt;a repository on Github with the name username.github.io . Clone this repository in your working directory in the computer:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/username/username.github.io.git&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
