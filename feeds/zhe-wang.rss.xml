@@ -519,44 +519,93 @@ ZgWsAOWYAAAAAElFTkSuQmCC
 &lt;p&gt;Well, there are certainly many other excellent choices like Jekyll. While for someone with a heavy reliance on Python, Pelican constitutes a better tool.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;Software Setup&lt;/h3&gt;
-&lt;p&gt;Before starting, one needs to install Pelican, Markdown and one Markdown Editor. &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;
-&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;Markdown&lt;/span&gt;
+&lt;p&gt;Before starting, one needs to install Pelican, Markdown and one Markdown Editor.  One easiest way to install is using the "pip" command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;pip install pelican
+pip install Markdown
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;For MAC users, the best Markdown editor is &lt;a href="http://mouapp.com"&gt;Mou&lt;/a&gt;. For Windows uders, &lt;a href="http://markdownpad.com"&gt;MarkdownPad&lt;/a&gt; is perhaps the most siutable one.&lt;/p&gt;
+&lt;p&gt;There are some other tools that are optional but quite useful, such as &lt;a href="http://johnmacfarlane.net/pandoc"&gt;Pandoc&lt;/a&gt;, which provide powerful support for a wide range of markup format. Another usefull tool could be &lt;a href="http://ipython.org/"&gt;IPython&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As to the Markdown editor, for MAC users, the best choice is &lt;a href="http://mouapp.com"&gt;Mou&lt;/a&gt;; and for Windows uders, &lt;a href="http://markdownpad.com"&gt;MarkdownPad&lt;/a&gt; is perhaps the most siutable one.&lt;/p&gt;
+&lt;p&gt;After installation, some configurations are needed to make the writing more confortable, including installing some useful plugins and choosing a suitable theme. Those steps will be shown below.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;Simple Steps&lt;/h3&gt;
 &lt;p&gt;To start, make one working directory for the blog, and generate the fundamental structures with Pelican Quick Start:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt;
-&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt;
-&lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;quickstart&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;mkdir blog
+cd blog
+pelican-quickstart
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Now a series of files and folders are generated. Now set up a repository on Github with the name username.github.io . Clone this repository in the "output" directory:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;output&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/username/username.github.io.git&lt;/span&gt;
+&lt;p&gt;Now a series of files and folders are generated. Download the Pelican Theme from the official &lt;a href="https://github.com/getpelican/pelican-themes"&gt;repository&lt;/a&gt; and put the decompressed folder in the working directory (here, the "/blog" directory).  Check the avilable themes through:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;pelican-theme --list
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Choose one theme in the list (like "bootstrap"), run:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;pelican-theme --install ~/path/to/pelican-themes/bootstrap --verbose
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now download the offical &lt;a href="https://github.com/getpelican/pelican-plugins"&gt;plugins&lt;/a&gt; and decompress into the working directory. In this blog, we rely on a plugin called liquid_tags. Open the configuration file pelicanconf.py and add the following lines:&lt;/p&gt;
+&lt;figure class='code'&gt;
+&lt;figcaption&gt;&lt;span&gt;[lang:python] [pelicanconf] configure_blog.py&lt;/span&gt; &lt;a href='/code/configure_blog.py'&gt;download&lt;/a&gt;&lt;/figcaption&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+
+&lt;span class="c"&gt;# Choose a theme&lt;/span&gt;
+&lt;span class="n"&gt;THEME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;bootstrap&amp;#39;&lt;/span&gt;
+
+&lt;span class="c"&gt;# Specify the directory of the plugins and which plugin is to be used&lt;/span&gt;
+&lt;span class="n"&gt;PLUGIN_PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;pelican-plugins&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;liquid_tags.img&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;liquid_tags.video&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+           &lt;span class="s"&gt;&amp;#39;liquid_tags.include_code&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;liquid_tags.notebook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+           &lt;span class="s"&gt;&amp;#39;liquid_tags.literal&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="c"&gt;# Accommodate IPython notebook&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exists&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;_nb_header.html&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;warnings&lt;/span&gt;
+    &lt;span class="n"&gt;warnings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;warn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;_nb_header.html not found.  &amp;quot;&lt;/span&gt;
+                  &lt;span class="s"&gt;&amp;quot;Rerun make html to finalize build.&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;EXTRA_HEADER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;_nb_header.html&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;decode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c"&gt;# Specify the directory of the IPython notebook files relative to the &amp;quot;content&amp;quot; directory&lt;/span&gt;
+&lt;span class="n"&gt;NOTEBOOK_DIR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;notebooks&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;In many cases, the chosen theme is not perfect enough and required to be modified. Here in order to work with IPython notebook, we need to some changes in the base.html file. The following code are added within the header tag:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;EXTRA_HEADER&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;EXTRA_HEADER&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;endif&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now set up a repository on Github with the name username.github.io . Clone this repository in the "output" directory:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;cd output
+git clone https://github.com/username/username.github.io.git
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Write your articles in the "content" directory with the Markdown editor. Go back to the main working directory and prepare to publish them:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;pelican&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="n"&gt;pelicanconf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;pelican -s pelicanconf.py ./content -o ./output/username.github.io
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;The final steps would be add/commit/push all files to Github:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;commit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;am&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Your Commit Message&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/username/username.github.io.git&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;cd output/username.github.io
+git status
+git add --all
+git commit -am &amp;quot;Your Commit Message&amp;quot;
+git push https://github.com/username/username.github.io.git
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;The last step could be changed if Git has been configured properly:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt; &lt;span class="n"&gt;master&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git push origin master
 &lt;/pre&gt;&lt;/div&gt;
 
 

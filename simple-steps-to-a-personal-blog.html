@@ -1769,44 +1769,93 @@ by <a class="url fn" href="/author/zhe-wang.html">Zhe Wang </a>
 <p>Well, there are certainly many other excellent choices like Jekyll. While for someone with a heavy reliance on Python, Pelican constitutes a better tool.</p>
 <hr />
 <h3>Software Setup</h3>
-<p>Before starting, one needs to install Pelican, Markdown and one Markdown Editor. </p>
-<div class="highlight"><pre><span class="n">pip</span> <span class="n">install</span> <span class="n">pelican</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">Markdown</span>
+<p>Before starting, one needs to install Pelican, Markdown and one Markdown Editor.  One easiest way to install is using the "pip" command:</p>
+<div class="highlight"><pre>pip install pelican
+pip install Markdown
 </pre></div>
 
 
-<p>For MAC users, the best Markdown editor is <a href="http://mouapp.com">Mou</a>. For Windows uders, <a href="http://markdownpad.com">MarkdownPad</a> is perhaps the most siutable one.</p>
+<p>There are some other tools that are optional but quite useful, such as <a href="http://johnmacfarlane.net/pandoc">Pandoc</a>, which provide powerful support for a wide range of markup format. Another usefull tool could be <a href="http://ipython.org/">IPython</a>.</p>
+<p>As to the Markdown editor, for MAC users, the best choice is <a href="http://mouapp.com">Mou</a>; and for Windows uders, <a href="http://markdownpad.com">MarkdownPad</a> is perhaps the most siutable one.</p>
+<p>After installation, some configurations are needed to make the writing more confortable, including installing some useful plugins and choosing a suitable theme. Those steps will be shown below.</p>
 <hr />
 <h3>Simple Steps</h3>
 <p>To start, make one working directory for the blog, and generate the fundamental structures with Pelican Quick Start:</p>
-<div class="highlight"><pre><span class="n">mkdir</span> <span class="n">blog</span>
-<span class="n">cd</span> <span class="n">blog</span>
-<span class="n">pelican</span><span class="o">-</span><span class="n">quickstart</span>
+<div class="highlight"><pre>mkdir blog
+cd blog
+pelican-quickstart
 </pre></div>
 
 
-<p>Now a series of files and folders are generated. Now set up a repository on Github with the name username.github.io . Clone this repository in the "output" directory:</p>
-<div class="highlight"><pre><span class="n">cd</span> <span class="n">output</span>
-<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/username/username.github.io.git</span>
+<p>Now a series of files and folders are generated. Download the Pelican Theme from the official <a href="https://github.com/getpelican/pelican-themes">repository</a> and put the decompressed folder in the working directory (here, the "/blog" directory).  Check the avilable themes through:</p>
+<div class="highlight"><pre>pelican-theme --list
+</pre></div>
+
+
+<p>Choose one theme in the list (like "bootstrap"), run:</p>
+<div class="highlight"><pre>pelican-theme --install ~/path/to/pelican-themes/bootstrap --verbose
+</pre></div>
+
+
+<p>Now download the offical <a href="https://github.com/getpelican/pelican-plugins">plugins</a> and decompress into the working directory. In this blog, we rely on a plugin called liquid_tags. Open the configuration file pelicanconf.py and add the following lines:</p>
+<figure class='code'>
+<figcaption><span>[lang:python] [pelicanconf] configure_blog.py</span> <a href='/code/configure_blog.py'>download</a></figcaption>
+
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c"># Choose a theme</span>
+<span class="n">THEME</span> <span class="o">=</span> <span class="s">&#39;bootstrap&#39;</span>
+
+<span class="c"># Specify the directory of the plugins and which plugin is to be used</span>
+<span class="n">PLUGIN_PATH</span> <span class="o">=</span> <span class="s">&#39;pelican-plugins&#39;</span>
+<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;liquid_tags.img&#39;</span><span class="p">,</span> <span class="s">&#39;liquid_tags.video&#39;</span><span class="p">,</span>
+           <span class="s">&#39;liquid_tags.include_code&#39;</span><span class="p">,</span> <span class="s">&#39;liquid_tags.notebook&#39;</span><span class="p">,</span>
+           <span class="s">&#39;liquid_tags.literal&#39;</span><span class="p">]</span>
+
+<span class="c"># Accommodate IPython notebook</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&#39;_nb_header.html&#39;</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">warnings</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;_nb_header.html not found.  &quot;</span>
+                  <span class="s">&quot;Rerun make html to finalize build.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">EXTRA_HEADER</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;_nb_header.html&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
+
+<span class="c"># Specify the directory of the IPython notebook files relative to the &quot;content&quot; directory</span>
+<span class="n">NOTEBOOK_DIR</span> <span class="o">=</span> <span class="s">&#39;notebooks&#39;</span>
+</pre></div>
+
+
+</figure>
+
+<p>In many cases, the chosen theme is not perfect enough and required to be modified. Here in order to work with IPython notebook, we need to some changes in the base.html file. The following code are added within the header tag:</p>
+<div class="highlight"><pre><span class="cp">{%</span> <span class="k">if</span> <span class="nv">EXTRA_HEADER</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{{</span> <span class="nv">EXTRA_HEADER</span> <span class="cp">}}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+
+
+<p>Now set up a repository on Github with the name username.github.io . Clone this repository in the "output" directory:</p>
+<div class="highlight"><pre>cd output
+git clone https://github.com/username/username.github.io.git
 </pre></div>
 
 
 <p>Write your articles in the "content" directory with the Markdown editor. Go back to the main working directory and prepare to publish them:</p>
-<div class="highlight"><pre><span class="n">pelican</span> <span class="o">-</span><span class="n">s</span> <span class="n">pelicanconf</span><span class="p">.</span><span class="n">py</span> <span class="p">.</span><span class="o">/</span><span class="n">content</span> <span class="o">-</span><span class="n">o</span> <span class="p">.</span><span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">username</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span><span class="p">.</span><span class="n">git</span>
+<div class="highlight"><pre>pelican -s pelicanconf.py ./content -o ./output/username.github.io
 </pre></div>
 
 
 <p>The final steps would be add/commit/push all files to Github:</p>
-<div class="highlight"><pre><span class="n">cd</span> <span class="n">output</span><span class="o">/</span><span class="n">username</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span>
-<span class="n">git</span> <span class="n">status</span>
-<span class="n">git</span> <span class="n">add</span> <span class="o">--</span><span class="n">all</span>
-<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">am</span> <span class="s">&quot;Your Commit Message&quot;</span>
-<span class="n">git</span> <span class="n">push</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/username/username.github.io.git</span>
+<div class="highlight"><pre>cd output/username.github.io
+git status
+git add --all
+git commit -am &quot;Your Commit Message&quot;
+git push https://github.com/username/username.github.io.git
 </pre></div>
 
 
 <p>The last step could be changed if Git has been configured properly:</p>
-<div class="highlight"><pre><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">master</span>
+<div class="highlight"><pre>git push origin master
 </pre></div>
 
 
