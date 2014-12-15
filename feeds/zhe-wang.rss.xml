@@ -1,252 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Homepage</title><link>/</link><description></description><atom:link href="/feeds%5Czhe-wang.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 16 Oct 2014 00:00:00 -0400</lastBuildDate><item><title>Statsmodels.py (1)</title><link>/statsmodelspy-1.html</link><description>&lt;p&gt;&lt;a href="https://github.com/statsmodels/statsmodels/"&gt;Statsmodels&lt;/a&gt; is a Python package that provides basic functions in descriptive statistics, estimation and inferences. This package has a rely upon the &lt;a href="https://www.scipy.org"&gt;Scipy&lt;/a&gt; libraries. It also needs the &lt;a href="https://pandas.pydata.org/"&gt;Pandas&lt;/a&gt; for some modules to work.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;Unlike &lt;a href="https://scikit-learn.org/stable/"&gt;Scikit-learn&lt;/a&gt;, Statsmodels is not designed for Machine Learning purposes, although many of its features (especially regression models) can benefit such applications. The users may also find Statsmodels shares some similarities with &lt;a href="https://www.r-project.org"&gt;R&lt;/a&gt;.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h5&gt;kernel density estimation&lt;/h5&gt;
-&lt;p&gt;The series of blogs on Statsmodels will try to demonstrate some usage and design details. The first one will be focused on kernel density estimation.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Zhe Wang</dc:creator><pubDate>Thu, 16 Oct 2014 00:00:00 -0400</pubDate><guid>tag:,2014-10-16:statsmodelspy-1.html</guid></item><item><title>About Me</title><link>/about-me.html</link><description>&lt;p&gt;PhD Student at Department of Electrical and Computer Engineering, Michigan State University&lt;/p&gt;
-&lt;p&gt;Email: wangzh34@msu.edu&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Zhe Wang</dc:creator><pubDate>Sun, 05 Oct 2014 00:00:00 -0400</pubDate><guid>tag:,2014-10-05:about-me.html</guid></item><item><title>Simple steps to a personal blog</title><link>/simple-steps-to-a-personal-blog.html</link><description>&lt;p&gt;This personal blog is constructed on the following components:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://pages.github.com/"&gt;Github Pages&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="docs.getpelican.com"&gt;Pelican&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://help.github.com/articles/markdown-basics/"&gt;Markdown&lt;/a&gt;    &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Some more details could be found in the homepage of the aforementioned projects. The following parts provides an initial setup for static personal webpages.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3&gt;Why Pelican ?&lt;/h3&gt;
-&lt;p&gt;Well, there are certainly many other excellent choices like Jekyll. While for someone with a heavy reliance on Python, Pelican constitutes a better tool.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3&gt;Software Setup&lt;/h3&gt;
-&lt;p&gt;Before starting, one needs to install Pelican, Markdown and one Markdown Editor. &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;
-&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;Markdown&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;For MAC users, the best Markdown editor is &lt;a href="http://mouapp.com"&gt;Mou&lt;/a&gt;. For Windows uders, &lt;a href="http://markdownpad.com"&gt;MarkdownPad&lt;/a&gt; is perhaps the most siutable one.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3&gt;Simple Steps&lt;/h3&gt;
-&lt;p&gt;To start, make one working directory for the blog, and generate the fundamental structures with Pelican Quick Start:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt;
-&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt;
-&lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;quickstart&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Now a series of files and folders are generated. Now set up a repository on Github with the name username.github.io . Clone this repository in the "output" directory:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;output&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/username/username.github.io.git&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Write your articles in the "content" directory with the Markdown editor. Go back to the main working directory and prepare to publish them:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;pelican&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="n"&gt;pelicanconf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;The final steps would be add/commit/push all files to Github:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;commit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;am&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Your Commit Message&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/username/username.github.io.git&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;The last step could be changed if Git has been configured properly:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt; &lt;span class="n"&gt;master&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;hr /&gt;
-&lt;p&gt;Open https://username.github.io in your browser, and your personal blog will be shown.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Zhe Wang</dc:creator><pubDate>Sat, 04 Oct 2014 00:00:00 -0400</pubDate><guid>tag:,2014-10-04:simple-steps-to-a-personal-blog.html</guid></item><item><title>Integrating Pelican with IPython notebook</title><link>/integrating-pelican-with-ipython-notebook.html</link><description>&lt;p&gt;first, I wanted a way to easily insert IPython notebooks into posts.
-Sure, I developed a &lt;a href="/blog/2012/10/04/blogging-with-ipython/"&gt;hackish solution&lt;/a&gt;
-to notebooks in Octopress which had worked
-well enough for a while, but a cleaner method would have involved
-digging into the Ruby source code and writing a full-fledged Octopress
-extension, based on nbconvert.  This would have involved a fair bit of effort
-to learn Ruby and figure out how to best interface it with the Python nbconvert
-code. Second, Ruby has so many strange and difficult pieces:
-GemFiles, RVM, rake... and I never took the time to really understand
-the real purpose of all of them (self-reflection:
-what parts of Python would seem strange and difficult if I hadn't
-been using them for so many years?).  The black-box nature of the process,
-at least in my own case, was starting to bother me.&lt;/p&gt;
-&lt;p&gt;But the kicker was this: In January I got a new computer, and after a reasonable
-amount of effort was unable to successfully build my blog.  I've been writing
-my posts exclusively on my old laptop which I somehow managed to successfully
-set up last August.  But that laptop now has a sorely outdated Ubuntu distro
-that I couldn't upgrade for fear of losing the ability to update my blog.
-Needless to say, this was not the most effective setup.&lt;/p&gt;
-&lt;p&gt;It was time to switch my blog engine to Python.&lt;/p&gt;
-&lt;h2&gt;Choosing a Python Static Generator&lt;/h2&gt;
-&lt;p&gt;I started asking around, and found that there were three solid contenders for
-a Python-based platform to replace Octopress: &lt;a href="http://hyde.github.io/"&gt;Hyde&lt;/a&gt;,
-&lt;a href="http://nikola.ralsina.com.ar/"&gt;Nikola&lt;/a&gt;,
-and &lt;a href="http://getpelican.com"&gt;Pelican&lt;/a&gt;.  I gave Hyde a test-run a few weeks ago
-in re-making my &lt;a href="http://www.astro.washington.edu/users/vanderplas"&gt;website&lt;/a&gt;,
-and I really like it: it's clean, straightforward, powerful, and easy to use.
-The documentation is a bit lacking, though, and I think it would take a fair
-bit more effort at this point to build a more complicated site with Hyde.&lt;/p&gt;
-&lt;p&gt;Nikola and Pelican both seem to be well-loved by their users, but I had to
-choose one.  I went with Pelican for one simple reason:
-it has more GitHub forks.  I'm sure this is entirely
-unfair to Nikola and all the contributors who have poured
-their energy into the project, but I had to choose one way or another.
-I'm pleased to say that Pelican has not been a disappointment:
-I've found it to be flexible and powerful.  It has an active developer-base,
-and makes available a wide array of themes and plugins.
-For the few extra pieces I needed, I found the plugin and theming
-API to be well-documented and straightforward to use.&lt;/p&gt;
-&lt;h2&gt;Migrating to Pelican from Octopress&lt;/h2&gt;
-&lt;p&gt;I won't attempt to write a one-size-fits-all guide to migrating to Pelican
-from Octopress: there are too many possibile combinations of formats, plugins,
-themes, etc.  But I will walk through my own process in some detail, in hopes
-that it might help others who find themselves in a similar predicament.&lt;/p&gt;
-&lt;p&gt;I had several goals when doing this migration:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;I wanted, as much as possible, to maintain the look and feel of the blog.
-  I like the default Octopress theme: it's simple, clean, compact, and
-  includes all the aspects I need for a good blog.&lt;/li&gt;
-&lt;li&gt;I wanted, as much as possible, to leave the source of my posts unmodified:
-  luckily Pelican supports writing posts in markdown and allows easy insertion
-  of custom plugins, so this was relatively easy to accommodate.&lt;/li&gt;
-&lt;li&gt;I wanted to maintain the history of Disqus comments for each page, as well
-  as the Twitter and Google Pages tools.&lt;/li&gt;
-&lt;li&gt;I wanted, as much as possible, to maintain the same URLs for all content,
-  including posts, notebooks, images, and videos.&lt;/li&gt;
-&lt;li&gt;I wanted a clean way to insert html-formatted IPython notebooks into blog
-  posts. Nearly half my posts are written as notebooks, and the
-  &lt;a href="/blog/2012/10/04/blogging-with-ipython/"&gt;old way&lt;/a&gt; of including them
-  was becoming much too cumbersome.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I was able to suitably address all these goals with Pelican
-in a few evenings' effort.  Some of it was already
-built-in to the Pelican settings architecture, some required
-customization of themes and extensions, and some required writing some brand
-new plugins.  I'll summarize these aspects below:&lt;/p&gt;
-&lt;h3&gt;Blog theme&lt;/h3&gt;
-&lt;p&gt;As I mentioned, I wanted to keep the look and feel of the blog consistent.
-Luckily, someone had gone before me and created an
-&lt;a href="https://github.com/duilio/pelican-octopress-theme"&gt;octopress Pelican theme&lt;/a&gt;
-which did most of the heavy lifting.  I contributed
-a few additional features, including the ability to
-&lt;a href="https://github.com/duilio/pelican-octopress-theme/pull/12"&gt;specify Disqus tags&lt;/a&gt;
-and maintain comment history, to
-&lt;a href="https://github.com/duilio/pelican-octopress-theme/pull/11"&gt;add Twitter, Google Plus, and Facebook&lt;/a&gt; links in the sidebar and footer,
-to add a &lt;a href="https://github.com/duilio/pelican-octopress-theme/pull/15"&gt;custom site search&lt;/a&gt;
-box which appears in the upper right of the
-navigation panel, as well as a few
-&lt;a href="https://github.com/duilio/pelican-octopress-theme/pull/14"&gt;other&lt;/a&gt;
-&lt;a href="https://github.com/duilio/pelican-octopress-theme/pull/13"&gt;tweaks&lt;/a&gt;.
-The result is what you see here: nearly identical to the old layout, with
-all the bells and whistles included.&lt;/p&gt;
-&lt;h3&gt;Octopress Markdown to Pelican Markdown&lt;/h3&gt;
-&lt;p&gt;Octopress has a few plugins which add some syntactic sugar to the markdown
-language.  These are tags specified in
-&lt;a href="https://github.com/Shopify/liquid"&gt;Liquid&lt;/a&gt;-style syntax:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;{% tag arg1 arg2 ... %}
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;I have made extensive use of these in my octopress posts, primarily to insert
-videos, images, and code blocks from file.
-In order to accommodate this in Pelican, I wrote
-a &lt;a href="https://github.com/getpelican/pelican-plugins/pull/21"&gt;Pelican plugin&lt;/a&gt;
-which wraps a custom Markdown preprocessor written via the
-&lt;a href="http://pythonhosted.org/Markdown/extensions/api.html"&gt;Markdown extension API&lt;/a&gt;
-which can correctly interpret these types of tags.  The tags ported from
-octopress thus far are:&lt;/p&gt;
-&lt;h4&gt;The Image Tag&lt;/h4&gt;
-&lt;p&gt;The image tag allows insertion of an image into the post with a
-specified size and position:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;{% img [position] /url/to/img.png [width] [height] [title] [alt] %}
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Here is an example of the result of the image tag:&lt;/p&gt;
-&lt;p&gt;&lt;img src="/images/galaxy.jpg" alt="A Galaxy" height="200" width="300" title="A Galaxy"&gt;&lt;/p&gt;
-&lt;h4&gt;The Video Tag&lt;/h4&gt;
-&lt;p&gt;The video tag allows embedding of an HTML5/Flash-compatible video
-into the post:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;{% video /url/to/video.mp4 [width] [height] [/url/to/poster.png] %}
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Here is an example of the output of the video tag:&lt;/p&gt;
-&lt;p&gt;&lt;div class="videobox"&gt;
-            &lt;video width="240" height="180" preload="none" controls poster="/downloads/videos/animate_square.png"&gt;&lt;source src='/downloads/videos/animate_square.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'&gt;&lt;/video&gt;&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;(see &lt;a href="/blog/2012/09/26/optical-illusions-in-matplotlib/"&gt;this post&lt;/a&gt; for a
-description of this video).&lt;/p&gt;
-&lt;h4&gt;The Code Include Tag&lt;/h4&gt;
-&lt;p&gt;The &lt;code&gt;include_code&lt;/code&gt; tag allows the insertion of formatted lines from
-a file into the post, with a title and a link to the source file:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;{% include_code filename.py [lang:python] [title] %}
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Here is an example of the output of the code include tag:&lt;/p&gt;
-&lt;figure class='code'&gt;
-&lt;figcaption&gt;&lt;span&gt;Hello World hello_world.py&lt;/span&gt; &lt;a href='/code/hello_world.py'&gt;download&lt;/a&gt;&lt;/figcaption&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Hello, World!&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;/figure&gt;
-
-&lt;p&gt;For more information on using these tags, refer to the
-&lt;a href="https://github.com/getpelican/pelican-plugins/pull/21"&gt;module doc-strings&lt;/a&gt;.&lt;/p&gt;
-&lt;h3&gt;Maintaining Disqus Comment Threads&lt;/h3&gt;
-&lt;p&gt;Static blogs are fast, lightweight, and easy to deploy.  A disadvantage, though,
-is the inability to natively include dynamic elements such as comment threads.
-&lt;a href="http://disqus.com/"&gt;Disqus&lt;/a&gt;
-is a third-party service that skirts this disadvantage very
-seamlessly.  All it takes is to add a small javascript snippet with some
-identifiers in the appropriate place on your page, and Disqus takes care of
-the rest.  To keep the comment history on each page required assuring that
-the site identifier and page identifiers remained the same between blog
-versions.  This part happens within the theme, and my
-&lt;a href="https://github.com/duilio/pelican-octopress-theme/pull/12"&gt;Disqus PR&lt;/a&gt;
-to the Pelican Octopress theme made this work correctly.&lt;/p&gt;
-&lt;h3&gt;Maintaining the URL structure&lt;/h3&gt;
-&lt;p&gt;By default, Octopress stores posts with a structure looking like
-&lt;code&gt;blog/YYYY/MM/DD/article-slug/&lt;/code&gt;.  The Pelican default is different, but
-easy enough to change.  In the &lt;code&gt;pelicanconf.py&lt;/code&gt;
-settings file, this corresponds to the following:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;ARTICLE_URL = &amp;#39;blog/{date:%Y}/{date:%m}/{date:%d}/{slug}/&amp;#39;
-ARTICLE_SAVE_AS = &amp;#39;blog/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html&amp;#39;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Next, at the top of the markdown file for each article, the metadata needs
-to be slightly modified from the form used by Octopress -- here is the
-actual metadata used in the document that generates this page:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Title&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Migrating&lt;/span&gt; &lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;Octopress&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;Pelican&lt;/span&gt;
-&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2013&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;05&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;07&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;00&lt;/span&gt;
-&lt;span class="n"&gt;slug&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;migrating&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;from&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;octopress&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pelican&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Additionally, the static elements of the blog (images, videos, IPython
-notebooks, code snippets, etc.) must be put within the correct directory
-structure.  These static files should be put in paths which are specified
-via the &lt;code&gt;STATIC_PATHS&lt;/code&gt; setting:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;STATIC_PATHS = [&amp;#39;images&amp;#39;, &amp;#39;figures&amp;#39;, &amp;#39;downloads&amp;#39;]
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Pelican presented a challenge here: as of the time of this
-writing, Pelican has a hard-coded &lt;code&gt;'static'&lt;/code&gt; subdirectory where these
-static paths are saved.  I submitted a
-&lt;a href="https://github.com/getpelican/pelican/pull/875"&gt;pull request&lt;/a&gt; to Pelican
-that replaces this hard-coded setting with a configurable path: because
-the change conflicts with a
-&lt;a href="https://github.com/getpelican/pelican/pull/795"&gt;bigger refactoring&lt;/a&gt;
-of the code which is ongoing, the PR will not be merged.  But until this
-new refactoring is finished, I'll be using
-&lt;a href="https://github.com/jakevdp/pelican/tree/specify-static"&gt;my own branch&lt;/a&gt;
-of Pelican to make this blog, and specify the correct static paths.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Homepage</title><link>/</link><description></description><atom:link href="/feeds%5Czhe-wang.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 14 Dec 2014 17:00:00 -0500</lastBuildDate><item><title>Integrating Pelican with IPython notebook</title><link>/integrating-pelican-with-ipython-notebook.html</link><description>&lt;p&gt;The following contents came from &lt;a href="https://github.com/jakevdp"&gt;jakevdp&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Inserting Notebooks&lt;/h3&gt;
 &lt;p&gt;The ability to seamlessly insert IPython notebooks into posts was one of the
 biggest drivers of my switch to Pelican.  Pelican has an
@@ -748,11 +501,64 @@ ZgWsAOWYAAAAAElFTkSuQmCC
 &lt;p&gt;The last line of the notebook.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;/h2&gt;
-&lt;p&gt;With all those things in place, the blog was ready to be built.  The result
-is right in front of you: you're reading it.  If you'd like to see the source
-from which this blog built, it's available at
-&lt;a href="http://www.github.com/jakevdp/PythonicPerambulations"&gt;http://www.github.com/jakevdp/PythonicPerambulations&lt;/a&gt;.  Feel free to adapt the configurations and theme
-to suit your own needs.&lt;/p&gt;
-&lt;p&gt;I'm glad to be working purely in Python from now on!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Zhe Wang</dc:creator><pubDate>Tue, 07 May 2013 17:00:00 -0400</pubDate><guid>tag:,2013-05-07:integrating-pelican-with-ipython-notebook.html</guid></item></channel></rss>
+&lt;/div&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Zhe Wang</dc:creator><pubDate>Sun, 14 Dec 2014 17:00:00 -0500</pubDate><guid>tag:,2014-12-14:integrating-pelican-with-ipython-notebook.html</guid></item><item><title>Statsmodels.py (1)</title><link>/statsmodelspy-1.html</link><description>&lt;p&gt;&lt;a href="https://github.com/statsmodels/statsmodels/"&gt;Statsmodels&lt;/a&gt; is a Python package that provides basic functions in descriptive statistics, estimation and inferences. This package has a rely upon the &lt;a href="https://www.scipy.org"&gt;Scipy&lt;/a&gt; libraries. It also needs the &lt;a href="https://pandas.pydata.org/"&gt;Pandas&lt;/a&gt; for some modules to work.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Unlike &lt;a href="https://scikit-learn.org/stable/"&gt;Scikit-learn&lt;/a&gt;, Statsmodels is not designed for Machine Learning purposes, although many of its features (especially regression models) can benefit such applications. The users may also find Statsmodels shares some similarities with &lt;a href="https://www.r-project.org"&gt;R&lt;/a&gt;.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h5&gt;kernel density estimation&lt;/h5&gt;
+&lt;p&gt;The series of blogs on Statsmodels will try to demonstrate some usage and design details. The first one will be focused on kernel density estimation.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Zhe Wang</dc:creator><pubDate>Thu, 16 Oct 2014 00:00:00 -0400</pubDate><guid>tag:,2014-10-16:statsmodelspy-1.html</guid></item><item><title>About Me</title><link>/about-me.html</link><description>&lt;p&gt;PhD Student at Department of Electrical and Computer Engineering, Michigan State University&lt;/p&gt;
+&lt;p&gt;Email: wangzh34@msu.edu&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Zhe Wang</dc:creator><pubDate>Sun, 05 Oct 2014 00:00:00 -0400</pubDate><guid>tag:,2014-10-05:about-me.html</guid></item><item><title>Simple steps to a personal blog</title><link>/simple-steps-to-a-personal-blog.html</link><description>&lt;p&gt;This personal blog is constructed on the following components:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://pages.github.com/"&gt;Github Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="docs.getpelican.com"&gt;Pelican&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://help.github.com/articles/markdown-basics/"&gt;Markdown&lt;/a&gt;    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Some more details could be found in the homepage of the aforementioned projects. The following parts provides an initial setup for static personal webpages.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Why Pelican ?&lt;/h3&gt;
+&lt;p&gt;Well, there are certainly many other excellent choices like Jekyll. While for someone with a heavy reliance on Python, Pelican constitutes a better tool.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Software Setup&lt;/h3&gt;
+&lt;p&gt;Before starting, one needs to install Pelican, Markdown and one Markdown Editor. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;
+&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;Markdown&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;For MAC users, the best Markdown editor is &lt;a href="http://mouapp.com"&gt;Mou&lt;/a&gt;. For Windows uders, &lt;a href="http://markdownpad.com"&gt;MarkdownPad&lt;/a&gt; is perhaps the most siutable one.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Simple Steps&lt;/h3&gt;
+&lt;p&gt;To start, make one working directory for the blog, and generate the fundamental structures with Pelican Quick Start:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt;
+&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt;
+&lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;quickstart&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now a series of files and folders are generated. Now set up a repository on Github with the name username.github.io . Clone this repository in the "output" directory:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;output&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/username/username.github.io.git&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Write your articles in the "content" directory with the Markdown editor. Go back to the main working directory and prepare to publish them:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;pelican&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="n"&gt;pelicanconf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The final steps would be add/commit/push all files to Github:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;commit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;am&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Your Commit Message&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/username/username.github.io.git&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The last step could be changed if Git has been configured properly:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt; &lt;span class="n"&gt;master&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr /&gt;
+&lt;p&gt;Open https://username.github.io in your browser, and your personal blog will be shown.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Zhe Wang</dc:creator><pubDate>Sat, 04 Oct 2014 00:00:00 -0400</pubDate><guid>tag:,2014-10-04:simple-steps-to-a-personal-blog.html</guid></item></channel></rss>
