@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Homepage</title><link>/</link><description></description><atom:link href="/feeds%5Czhe-wang.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 14 Dec 2014 17:00:00 -0500</lastBuildDate><item><title>Integrating Pelican with IPython notebook</title><link>/integrating-pelican-with-ipython-notebook.html</link><description>&lt;p&gt;The following contents came from &lt;a href="https://github.com/jakevdp"&gt;jakevdp&lt;/a&gt;&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home</title><link>/</link><description></description><atom:link href="/feeds%5Czhe-wang.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 14 Dec 2014 17:00:00 -0500</lastBuildDate><item><title>Integrating Pelican with IPython notebook</title><link>/integrating-pelican-with-ipython-notebook.html</link><description>&lt;p&gt;The following contents came from &lt;a href="https://github.com/jakevdp"&gt;jakevdp&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Inserting Notebooks&lt;/h3&gt;
 &lt;p&gt;The ability to seamlessly insert IPython notebooks into posts was one of the
 biggest drivers of my switch to Pelican.  Pelican has an
@@ -570,8 +570,9 @@ pelican-quickstart
 &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;EXTRA_HEADER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;_nb_header.html&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;decode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-&lt;span class="c"&gt;# Specify the directory of the IPython notebook files relative to the &amp;quot;content&amp;quot; directory&lt;/span&gt;
+&lt;span class="c"&gt;# Specify the directory of the addtional files relative to the &amp;quot;content&amp;quot; directory&lt;/span&gt;
 &lt;span class="n"&gt;NOTEBOOK_DIR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;notebooks&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;CODE_DIR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;code&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
