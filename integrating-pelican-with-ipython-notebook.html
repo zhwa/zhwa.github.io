@@ -1722,8 +1722,7 @@ jQuery(document).ready(function($) {
 		<div class="container-fluid">
 		  <a class="brand" href="/">Home</a>
 			<ul class="nav">
-					<li ><a href="/category/essay.html">Essay</a></li>
-					<li class="active"><a href="/category/misc.html">misc</a></li>
+					<li class="active"><a href="/category/essay.html">Essay</a></li>
 					<li ><a href="/category/statistics.html">Statistics</a></li>
 			</ul>
 			<p class="pull-right"><a href="/archives.html">[archives]</a> <a href="/tags.html">[tags]</a></p>
@@ -1753,24 +1752,12 @@ jQuery(document).ready(function($) {
 	  <div class="content">
 	<div class='article'>
 		<div class="page-header"><h1>Integrating Pelican with IPython notebook</h1></div>
-		<div class="well small">Permalink: <a class="more" href="/integrating-pelican-with-ipython-notebook.html">2014-12-14 17:00:00-05:00</a>
+		<div class="well small">Permalink: <a class="more" href="/integrating-pelican-with-ipython-notebook.html">2014-12-14 00:00:00-05:00</a>
 by <a class="url fn" href="/author/zhe-wang.html">Zhe Wang </a>
- in <a href="/category/misc.html">misc</a>
+ in <a href="/category/essay.html">Essay</a>
 </div>
-		<div><p>The following contents came from <a href="https://github.com/jakevdp">jakevdp</a></p>
-<h3>Inserting Notebooks</h3>
-<p>The ability to seamlessly insert IPython notebooks into posts was one of the
-biggest drivers of my switch to Pelican.  Pelican has an
-<a href="http://danielfrg.github.io/blog/2013/03/08/pelican-ipython-notebook-plugin/">ipython notebook plugin</a>
-available, but I wasn't completely happy with it.  The plugin implements
-a reader which treats the notebooks themselves as the source of a post,
-leading to the requirement to insert blog metadata into the notebook itself.
-This is a suitable solution, but for my own purposes I much prefer a solution
-in which the content of a notebook could be inserted into a stand-alone post,
-such that the notebook and the blog metadata are completely separate.</p>
-<p>To accomplish this, I added a submodule to my
-<a href="https://github.com/jakevdp/pelican-plugins/blob/liquid_tags/liquid_tags/notebook.py">liquid_tags</a> Pelican plugin which allows the insertion of notebooks
-using the following syntax:</p>
+		<div><p>This is a test page for integrating IPython notebook into the blog. The following  file came from <a href="https://github.com/jakevdp">Jake Vanderplas's blog</a>.</p>
+<p>Add the following line into the markdown file:</p>
 <div class="highlight"><pre>{% notebook path/to/notebook.ipynb [cells[i:j]] %}
 </pre></div>
 
@@ -1778,28 +1765,6 @@ using the following syntax:</p>
 <p>This inserts the notebook at the given location in the post, optionally
 selecting a given range of notebook cells with standard Python list slicing
 syntax.</p>
-<p>The formatting of notebooks requires some special CSS styles which must
-be inserted into the header of each page where notebooks are shown.  Rather
-than requiring the theme to be customized to support notebooks, I decided
-on a solution where an <code>EXTRA_HEADER</code> setting is used to specify html
-and CSS which
-should be added to the header of the main page.  The notebook plugin
-saves the required header to a file called <code>_nb_header.html</code> within
-the main source directory.  To
-insert the appropriate formatting, we add the following lines to the
-settings file, <code>pelicanconf.py</code>:</p>
-<div class="highlight"><pre>EXTRA_HEADER = open(&#39;_nb_header.html&#39;).read().decode(&#39;utf-8&#39;)
-</pre></div>
-
-
-<p>In the theme file, within the header tag, we add the following:</p>
-<div class="highlight"><pre><span class="x"> </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">EXTRA_HEADER</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x"> </span><span class="cp">{{</span> <span class="nv">EXTRA_HEADER</span> <span class="cp">}}</span><span class="x"></span>
-<span class="x"> </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
-</pre></div>
-
-
-<p>Here is the result: a short notebook inserted directly into the post:</p>
 <p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -2259,7 +2224,8 @@ ZgWsAOWYAAAAAElFTkSuQmCC
 <p>The last line of the notebook.</p>
 </div>
 </div>
-</div></p></div>
+</div></p>
+<p>For simple comparison, here goes an equation inline: $E = mc^2$.</p></div>
 	</div>
 		<footer>
 		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
