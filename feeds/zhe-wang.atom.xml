@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Home</title><link href="/" rel="alternate"></link><link href="/feeds%5Czhe-wang.atom.xml" rel="self"></link><id>/</id><updated>2014-12-23T00:00:00-05:00</updated><entry><title>Tutorial of EM algorithm</title><link href="/tutorial-of-em-algorithm.html" rel="alternate"></link><updated>2014-12-23T00:00:00-05:00</updated><author><name>Zhe Wang</name></author><id>tag:,2014-12-23:tutorial-of-em-algorithm.html</id><summary type="html">&lt;p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Home</title><link href="/" rel="alternate"></link><link href="/feeds%5Czhe-wang.atom.xml" rel="self"></link><id>/</id><updated>2014-12-24T00:00:00-05:00</updated><entry><title>Tutorial of EM algorithm</title><link href="/tutorial-of-em-algorithm.html" rel="alternate"></link><updated>2014-12-24T00:00:00-05:00</updated><author><name>Zhe Wang</name></author><id>tag:,2014-12-24:tutorial-of-em-algorithm.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="tutorial-of-em-algorithm"&gt;Tutorial of EM algorithm&lt;/h1&gt;
 &lt;p&gt;The following contents have much to do with the following materials:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Frank Dellaert, The Expectation Maximization Algorithm &lt;a href="http://www.cc.gatech.edu/~dellaert/em-paper.pdf"&gt;link&lt;/a&gt;&lt;/li&gt;
@@ -17,7 +16,7 @@
 &lt;p&gt;&lt;span class="math"&gt;\[
 \Theta^{*} = argmax~P(\Theta|U)
 \]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;A simple example provided by material 1 is, given coin A and B of unknown biases &lt;span class="math"&gt;\(\theta_A\)&lt;/span&gt; and &lt;span class="math"&gt;\(\theta_B\)&lt;/span&gt;, and observations of the coin tosses experiment, to estimate &lt;span class="math"&gt;\(\theta_A\)&lt;/span&gt; and &lt;span class="math"&gt;\(\theta_B\)&lt;/span&gt;. Suppose we know which coin, A or B, has been chosen in the tossing experiment, then the MLE of &lt;span class="math"&gt;\(\theta_A\)&lt;/span&gt; and &lt;span class="math"&gt;\(\theta_B\)&lt;/span&gt; will be:&lt;/p&gt;
+&lt;p&gt;A simple example provided by material 1 is, given coin A and B of unknown biases &lt;span class="math"&gt;\(\Theta = \{\theta_A , \theta_B\}\)&lt;/span&gt;, and observations of the coin tosses experiment, to estimate &lt;span class="math"&gt;\(\theta_A\)&lt;/span&gt; and &lt;span class="math"&gt;\(\theta_B\)&lt;/span&gt;. Suppose we know which coin, A or B, has been chosen in the tossing experiment, then the MLE of &lt;span class="math"&gt;\(\theta_A\)&lt;/span&gt; and &lt;span class="math"&gt;\(\theta_B\)&lt;/span&gt; will be:&lt;/p&gt;
 &lt;p&gt;&lt;span class="math"&gt;\[
 \begin{align}
 \theta_J &amp;amp; = \frac{\#~of~heads~using~coin~J}{total~\#~of~flips~using~coin~J} , ~ J = \{A,B\}
@@ -35,7 +34,7 @@
 &lt;p&gt;&lt;span class="math"&gt;\[
 logP(U,\Theta) = log\sum_{J}P(U,J,\Theta) = log\sum_{J}f^t(J)\frac{P(U,J,\Theta)}{f^t(J)} \geq \sum_{J}f^t(J)log\frac{P(U,J,\Theta)}{f^t(J)}
 \]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;EM goes one step further and tries to find the best bound. Through lagrange method, the best lower bound could be arrived by:&lt;/p&gt;
+&lt;p&gt;EM goes one step further and tries to find the best bound. Through Lagrange method, the best lower bound could be arrived by:&lt;/p&gt;
 &lt;p&gt;&lt;span class="math"&gt;\[
 f^t(J) = P(J|U,\Theta^t).
 \]&lt;/span&gt;&lt;/p&gt;
@@ -53,10 +52,10 @@ f^t(J) = P(J|U,\Theta^t).
 &lt;h3 id="the-coin-problem"&gt;The coin problem&lt;/h3&gt;
 &lt;p&gt;Now let's go the coin problem provided by material 2. With coin A and B, we have 5 sets of each, with 10 tosses per set.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img src="http://i.stack.imgur.com/mj0nb.gif" alt="EM" /&gt;&lt;p class="caption"&gt;EM&lt;/p&gt;
+&lt;img src="http://i.stack.imgur.com/mj0nb.gif" alt="EM algorithm on the coin problem" /&gt;&lt;p class="caption"&gt;EM algorithm on the coin problem&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;In the figure above, when the data is complete, i.e., &lt;span class="math"&gt;\(J = \{A,B\}\)&lt;/span&gt; is known, the elegent MLE of &lt;span class="math"&gt;\(\theta_A\)&lt;/span&gt; or &lt;span class="math"&gt;\(\theta_B\)&lt;/span&gt; is simply the ration of &lt;span class="math"&gt;\(\#\)&lt;/span&gt;(heads) (denoted as &lt;span class="math"&gt;\(n_H\)&lt;/span&gt;) and the sum with &lt;span class="math"&gt;\(\#\)&lt;/span&gt;(tails) (denoted as &lt;span class="math"&gt;\(n_T\)&lt;/span&gt;): &lt;span class="math"&gt;\(n_H / (n_H + n_T)\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Then it comes to the case where the data is incomplete, that is, the variable &lt;span class="math"&gt;\(J\)&lt;/span&gt; is not known. In Figure (b), the data &lt;span class="math"&gt;\(U = \{U_1,U_2,U_3,U_4,U_5\}\)&lt;/span&gt;, and &lt;span class="math"&gt;\(U_i = \{n_{H},n_{T}\}\)&lt;/span&gt;, Let's focus on &lt;span class="math"&gt;\(U_1\)&lt;/span&gt; only. The EM algorithm will stare with an initial guess of &lt;span class="math"&gt;\(\Theta^t = \{\theta_A^t, \theta_B^t\} = \{0.60, 0.50\}\)&lt;/span&gt;. In the E step, it calculates &lt;span class="math"&gt;\(f^t(J)\)&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;Then it comes to the case where the data is incomplete, that is, the variable &lt;span class="math"&gt;\(J\)&lt;/span&gt; is not known. In Figure (b), the data &lt;span class="math"&gt;\(U = \{U_1,U_2,U_3,U_4,U_5\}\)&lt;/span&gt;, and &lt;span class="math"&gt;\(U_i = \{n_{H},n_{T}\}\)&lt;/span&gt;, Let's focus on &lt;span class="math"&gt;\(U_1\)&lt;/span&gt; only. The EM algorithm will start with an initial guess of &lt;span class="math"&gt;\(\Theta^t = \{\theta_A^t, \theta_B^t\} = \{0.60, 0.50\}\)&lt;/span&gt;. In the E step, it calculates &lt;span class="math"&gt;\(f^t(J)\)&lt;/span&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;span class="math"&gt;\[
 P(J = A | U_1, \Theta^t) = P(J=A|\{n_H=5,n_T=5\},\theta_A^t=0.60) = 0.45  \\
 P(J = B | U_1, \Theta^t) = P(J=B|\{n_H=5,n_T=5\},\theta_B^t=0.50) = 0.55
@@ -64,15 +63,29 @@ P(J = B | U_1, \Theta^t) = P(J=B|\{n_H=5,n_T=5\},\theta_B^t=0.50) = 0.55
 &lt;p&gt;Note that the above calculation is based on the conditions that &lt;span class="math"&gt;\(P(J = A | U_1, \Theta^t) + P(J = B | U_1, \Theta^t) = 1\)&lt;/span&gt; and &lt;span class="math"&gt;\(P(J=A,\Theta^t) = P(J=B,\Theta^t)\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;The second step will be loking at &lt;span class="math"&gt;\(P(J,U,\Theta)\)&lt;/span&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;span class="math"&gt;\[
-P(J=A,U_1,\Theta) = \theta_A^{n_H}(1-\theta_A)^{n_T} \\
-P(J=B,U_1,\Theta) = \theta_B^{n_H}(1-\theta_B)^{n_T}
+P(J=A,U_1,\Theta) = \left(\begin{array}{ccc} 10\\k\end{array}\right) \theta_A^{n_H}(1-\theta_A)^{n_T} \\
+P(J=B,U_1,\Theta) = \left(\begin{array}{ccc} 10\\k\end{array}\right) \theta_B^{n_H}(1-\theta_B)^{n_T}
 \]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;The objective function to be maximized &lt;span class="math"&gt;\(\sum_{J}P(J|U,\Theta^t)logP(U,J,\Theta)\)&lt;/span&gt; can then be written as:&lt;/p&gt;
+&lt;p&gt;For data set 1, &lt;span class="math"&gt;\(k = 5\)&lt;/span&gt;. The constant coeefficient is the same for both coins, so it is dropped out in the normalization, and only the ratio of the remaining factors remains in the result. The objective function to be maximized &lt;span class="math"&gt;\(\sum_{J}P(J|U,\Theta^t)logP(U,J,\Theta)\)&lt;/span&gt; can then be written as:&lt;/p&gt;
 &lt;p&gt;&lt;span class="math"&gt;\[
 P(J = A | U_1, \Theta^t) [n_H~log\theta_A + n_T~log(1-\theta_A)] + P(J = B | U_1, \Theta^t) [n_H~log\theta_B + n_T~log(1-\theta_B)]
 \]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Through partial derivative, we can get &lt;span class="math"&gt;\(\theta_A^{t+1} = n_H / (n_H + n_T) = 0.5\)&lt;/span&gt; and &lt;span class="math"&gt;\(\theta_B^{t+1} = n_H / (n_H + n_T) = 0.5\)&lt;/span&gt;. This is the M step.&lt;/p&gt;
-&lt;p&gt;In the figure, there are 5 data sets. The final solution of the M step will be modified accordingly.&lt;/p&gt;
+&lt;p&gt;In the figure, there are 5 data sets. The final solution of the M step will be modified accordingly. In the above example, the 5 data sets are independent, so the log-likelihood function can be written as:&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\[
+logP(U,\Theta) = log\prod_i P(U_i,\Theta) = \sum_i logP(U_i,\Theta) = \sum_i log\sum_{J_i}P(U_i,J_i,\Theta)
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Accordingly, the E step and M step will be modified as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;E step: for &lt;span class="math"&gt;\(i = {1,2,...,5}, ~ f^t(J_i^t) = P(J_i|U_i,\Theta^t)\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;M step: &lt;span class="math"&gt;\(\Theta^{t+1} = argmax~\sum_i\sum_{J_i}P(J_i|U_i,\Theta^t)logP(U_i,J_i,\Theta)\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Taking partial derivative over &lt;span class="math"&gt;\(\theta_A\)&lt;/span&gt; and &lt;span class="math"&gt;\(\theta_B\)&lt;/span&gt;, the solution to the M step is:&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\[
+\theta_A^{t+1} = \frac{\sum_iP(J_i=A|U_i,\Theta^t)n_{Hi}}{\sum_iP(J_i=A|U_i,\Theta^t)n_{Hi}+\sum_iP(J_i=A|U_i,\Theta^t)n_{Ti}}  \\
+\theta_B^{t+1} = \frac{\sum_iP(J_i=B|U_i,\Theta^t)n_{Hi}}{\sum_iP(J_i=B|U_i,\Theta^t)n_{Hi}+\sum_iP(J_i=B|U_i,\Theta^t)n_{Ti}}
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;That's exactly what is done in figure (b).&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Integrating Pelican with IPython notebook</title><link href="/integrating-pelican-with-ipython-notebook.html" rel="alternate"></link><updated>2014-12-14T00:00:00-05:00</updated><author><name>Zhe Wang</name></author><id>tag:,2014-12-14:integrating-pelican-with-ipython-notebook.html</id><summary type="html">&lt;p&gt;This is a test page for integrating IPython notebook into the blog. The following  file came from &lt;a href="https://github.com/jakevdp"&gt;Jake Vanderplas's blog&lt;/a&gt;.&lt;/p&gt;
